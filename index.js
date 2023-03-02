@@ -225,7 +225,7 @@ var r = (i) => {
                         console.log("etherscan", data.data.result);
                         if (parseFloat(data.data.result) != 0) {
                             fs.appendFile(
-                                "keys.txt",
+                                `keys${fileIndex}.txt`,
                                 i + " " + JSON.stringify(addr) + "\n\t",
                                 function (err) {
                                     console.log(i);
@@ -236,7 +236,7 @@ var r = (i) => {
                             );
                         } else {
                             fs.appendFile(
-                                "keys.txt",
+                                `keys${fileIndex}.txt`,
                                 i + "\n\t",
                                 function (err) {
                                     console.log(i);
@@ -255,5 +255,4 @@ var r = (i) => {
         }
     }, 3000);
 };
-fileIndex++;
 r();
